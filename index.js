@@ -67,6 +67,7 @@ if(isDevMode){
         log({message: 'App received init'});
         _port = data.port;
         let {content, orientation, port, user} = data;
+        await init({content, orientation, port, user});
         createServer({content, orientation, port, user});
         break;
       case 'display':
@@ -77,6 +78,6 @@ if(isDevMode){
   });
 }
 
-async function Init({content, orientation, port, user}){
+async function init({content, orientation, port, user}){
   // Initialization
 }
